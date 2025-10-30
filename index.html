@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Entry Form</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="form-container">
-    <h2>user entry</h2>
-    <p>Fill out the form and we'll get back to you shortly.</p>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculator</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main class="calculator-root">
+			<div class="calculator" role="application" aria-label="Calculator">
+				<div class="display-row">
+					<input id="display" class="display" type="text" inputmode="none" aria-label="Calculator display" readonly />
+				</div>
 
-    <form>
-      <label for="fname">First name</label>
-      <input type="text" id="fname" name="fname" placeholder="firstname" required />
+				<div class="buttons-grid" role="group" aria-label="Calculator buttons">
+					<!-- row 1 -->
+					<button class="btn wide" data-action="clear" aria-label="Clear">C</button>
+					<button class="btn" data-action="backspace" aria-label="Backspace">⌫</button>
+					<button class="btn op" data-value="/" aria-label="Divide">÷</button>
 
-      <label for="lname">Last name</label>
-      <input type="text" id="lname" name="lname" placeholder="lastname" required />
+					<!-- row 2 -->
+					<button class="btn" data-value="7">7</button>
+					<button class="btn" data-value="8">8</button>
+					<button class="btn" data-value="9">9</button>
+					<button class="btn op" data-value="*" aria-label="Multiply">×</button>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="user@example.com" required />
+					<!-- row 3 -->
+					<button class="btn" data-value="4">4</button>
+					<button class="btn" data-value="5">5</button>
+					<button class="btn" data-value="6">6</button>
+					<button class="btn op" data-value="-" aria-label="Subtract">−</button>
 
-      <label>Preferred contact method</label>
-      <div class="radio-group">
-        <label><input type="radio" name="contact" value="Email" checked /> Email</label>
-        <label><input type="radio" name="contact" value="Phone" /> Phone</label>
-      </div>
+					<!-- row 4 -->
+					<button class="btn" data-value="1">1</button>
+					<button class="btn" data-value="2">2</button>
+					<button class="btn" data-value="3">3</button>
+					<button class="btn op" data-value="+" aria-label="Add">+</button>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" placeholder="Write your message..."></textarea>
+					<!-- row 5 -->
+					<button class="btn wide" data-value="0">0</button>
+					<button class="btn" data-value=".">.</button>
+					<button class="btn equals" data-action="equals" aria-label="Equals">=</button>
+				</div>
+			</div>
+		</main>
 
-      <div class="button-group">
-        <button type="reset" class="reset-btn">Reset</button>
-        <button type="submit" class="send-btn">Send message</button>
-      </div>
-    </form>
-  </div>
-</body>
+		<script src="script.js" defer></script>
+	</body>
 </html>
